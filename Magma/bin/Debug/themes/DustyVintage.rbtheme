@@ -1,0 +1,124 @@
+
+
+;the default camera pacing
+;can be one of the following:  
+;   'minimal', 'slow', 'medium', 'fast', or 'crazy'
+(camera_pacing medium)
+
+(section_presets
+
+   (default 
+      (allowed_lightpresets loop_warm harmony)
+      (allowed_postprocs ProFilm_b.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (intro   
+      (allowed_lightpresets loop_warm)
+      (allowed_postprocs film_sepia_ink.pp)
+      (lightpreset_blendin 4)
+      (postproc_blendin 4)
+   )
+   
+   (preverse
+      (allowed_lightpresets harmony)
+      (allowed_postprocs ProFilm_b.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (verse1
+      (allowed_lightpresets loop_cool)
+      (allowed_postprocs film_sepia_ink.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (verse2
+      (allowed_lightpresets loop_cool)
+      (allowed_postprocs film_sepia_ink.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (verse3
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs film_sepia_ink.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )  
+   
+   (bridge
+      (allowed_lightpresets harmony)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 4)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (solo
+      (allowed_lightpresets sweep)
+      (allowed_postprocs ProFilm_b.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )   
+   
+   (prechorus   
+      (allowed_lightpresets verse)
+      (allowed_postprocs ProFilm_b.pp)
+      (lightpreset_blendin 2)
+      (keyframe_rate 4)
+      (postproc_blendin 2)
+   )  
+   
+   (chorus1
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (chorus2
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (chorus3
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (postchorus
+      (allowed_lightpresets verse)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (main_riff
+      (allowed_lightpresets chorus)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 4)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   ) 
+   
+   (outro
+      (allowed_lightpresets chorus)
+      (allowed_postprocs ProFilm_b.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+
+)

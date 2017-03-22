@@ -1,0 +1,148 @@
+
+
+;the default camera pacing
+;can be one of the following:  
+;   'minimal', 'slow', 'medium', 'fast', or 'crazy'
+(camera_pacing medium)
+
+;extra practice sections you'd like to create an entry for in section_presets
+(extra_sections
+
+   (spacey
+      (practice_sections "*spacey*")
+   )
+
+   (trippy
+      (practice_sections "*trippy*")
+   )   
+      
+)
+
+(section_presets
+
+   (default 
+      (allowed_lightpresets sweep manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 4)
+      (postproc_blendin 4)
+   )   
+   
+   (intro   
+      (allowed_lightpresets loop_warm) 
+      (allowed_postprocs posterize.pp)
+      (lightpreset_blendin 4)
+   )  
+   
+   (spacey
+      (allowed_lightpresets dischord)
+      (allowed_postprocs video_trails.pp)            
+      (lightpreset_blendin 4)
+      (keyframe_rate 2)
+      (postproc_blendin 4)
+   )
+   
+   (verse1
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 4)
+      (lightpreset_blendin 4)
+      (postproc_blendin 4)
+   )  
+   
+   (verse2
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 4)
+      (lightpreset_blendin 4)
+      (postproc_blendin 4)
+   )  
+   
+   (verse3
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 4)
+      (lightpreset_blendin 4)
+      (postproc_blendin 4)
+   )   
+   
+   (chorus1
+      (allowed_lightpresets chorus)
+      (allowed_postprocs film_contrast_red.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+      (dircut_at_start directed_all)
+   )
+   
+   (chorus2
+      (allowed_lightpresets chorus)
+      (allowed_postprocs film_contrast_red.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+   ) 
+   
+   (chorus3
+      (allowed_lightpresets chorus)
+      (allowed_postprocs film_contrast_red.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+   ) 
+   
+   (postchorus
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (postproc_blendin 2)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+   )
+   
+   (prechorus
+      (allowed_lightpresets verse)
+      (allowed_postprocs film_contrast_green.pp)
+      (postproc_blendin 4)
+      (keyframe_rate 2)
+      (lightpreset_blendin 4)
+   ) 
+   
+   (bridge
+      (allowed_lightpresets sweep)
+      (allowed_postprocs ProFilm_psychedelic_blue_red.pp)
+      (postproc_blendin 4)
+      (lightpreset_blendin 4)
+   )   
+   
+   (solo
+      (allowed_lightpresets searchlights manual_warm sweep)
+      (allowed_postprocs video_trails.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 4)
+      (lightpreset_blendin 4)
+   )
+   
+   (main_riff
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 4)
+      (lightpreset_blendin 4)
+   ) 
+   
+   (trippy
+      (allowed_lightpresets sweep)
+      (allowed_postprocs video_trails.pp)
+      (postproc_blendin 4)
+      (lightpreset_blendin 4)
+   )
+   
+   (outro
+      (allowed_lightpresets dischord)
+      (allowed_postprocs video_trails.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+   )
+   
+)

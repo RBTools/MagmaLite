@@ -1,0 +1,94 @@
+//Magma: C3 Roks Edition Custom Skin Template
+//To comment a line, just add // at the beginning
+//For color settings, use RGB or Hex values only: =0,0,0 to =255,255,255 or =#000000 to =#FFFFFF
+//Some background colors can be made transparent, enter =Transparent for the color value
+//If there is a problem loading any field, bright red will be displayed to highlight the problem (255,0,0)
+//I strongly recommend copy/pasting this file and modifying it for your uses
+//Any images you wish you override in the UI must be in a folder with the same name as this file:
+//This is named template.skin, so the folder must be skins/template/
+//All images that can be replaced can be found in the skins/template/ folder
+//Any that you want to change, make your modifications and put them in your skin's folder
+
+//Name of the skin, can be anything but too long might screw with the menu's UI
+SkinName=Chrysalis
+
+//Overall form background color, hidden by optional background.jpg image (not included in template)
+MainBackgroundColor=#001600
+
+//Header background color, hidden by optional header.png image (included in template), =Transparent allowed
+HeaderBackgroundColor=#001600
+
+//Tab selection button text colors
+TabOnColor=255,255,255
+TabOffColor=#0C5E74
+TabHoverColor=#388A9F
+
+//Information Tab background color, hidden by optional information_tab.jpg image (not included in template)
+InfoTabBackgroundColor=0,0,0
+
+//Information Tab button background color, =Transparent allowed
+InfoTabButtonColor=0,0,0
+
+//Audio Tab background color, hidden by optional audio_tab.jpg image (not included in template)
+AudioTabBackgroundColor=0,0,0
+
+//Audio Tab button background color, =Transparent allowed
+AudioTabButtonColor=0,0,0
+
+//Game Data Tab background color, hidden by optional gamedata_tab.jpg image (not included in template)
+GameDataTabBackgroundColor=0,0,0
+
+//Game Data Tab button background color, =Transparent allowed
+GameDataTabButtonColor=0,0,0
+
+//Button background color, =Transparent allowed
+AudioTabButtonsColor=#0C5E74
+DataTabButtonsColor=#0C5E74
+InfoTabButtonsColor=#0C5E74
+
+//Button text color (controls text on all the buttons at once, too many to allow individual values)
+ButtonTextColor=0,0,0
+
+//Button style: allowed styles are "System" (Shiny skin), "Flat" (Colorful skin), "Standard"
+ButtonStyle=Standard
+
+//Label text color (controls text on all the labels at once, too many to allow individual values)
+LabelTextColor=255,255,255
+
+//Difficulty labels text color (optional, otherwise LabelTextColor applies)
+DifficultyLabelColor=255,255,255
+
+//Text box background color
+TextBoxBackgroundColor=0,0,0
+TextBoxTextColor=#37899E
+
+//Group box background / text color, =Transparent allowed
+GroupBoxBackgroundColor=Transparent		
+GroupBoxTextColor=#FFFFFF
+
+//Combo box / drop-down background / text colors
+ComboBoxBackgroundColor=0,0,0
+ComboBoxTextColor=#388A9F
+
+//Combo box style: allowed styles are "System" (Shiny skin), "Flat"  (Colorful skin), "Standard"
+ComboBoxStyle=Flat
+
+//Numeric up/down background / text colors
+NumericBackgroundColor=0,0,0
+NumericTextColor=#37899E
+
+//To-Do list background /text colors
+ToDoBackgroundColor=0,0,0
+ToDoTextColor=#37899E
+
+//Footer background color, hidden by optional footer.png image (not included in template), =Transparent allowed
+FooterBackgroundColor=0,0,0
+
+//Footer button color, =Transparent allowed
+FooterButtonBackgroundColor=#37899E
+
+//Menu colors
+MenuBackgroundColor=0,0,0
+MenuTextColor=#37899E
+MenuBorder=255,255,255
+MenuHighlight=255,255,255

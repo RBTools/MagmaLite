@@ -1,0 +1,24 @@
+Magma: C3 Roks Edition To Do Template Begin
+//You can create your own by filling out the fields in Magma and then clicking 'Save current list as template
+//To do it manually, use the following format:
+//ToDo#=Description text,important_boolean --- for example:
+//ToDo1=Enter and verify all metadata,True
+//ToDo15=Set preview time to optimal spot,False
+
+ToDo1=Verify the accuracy of all metadata,False
+ToDo2=Grab official *.png_xbox art file if applicable,False
+ToDo3=Chart reductions in all instruments,False
+ToDo4=Add drum fills,False
+ToDo5=Add overdrive for all instruments,False
+ToDo6=Add overdrive for vocals,False
+ToDo7=Create practice sessions [EVENTS],False
+ToDo8=Draw sing-along notes in VENUE,False
+ToDo9=Record dry vocals for lipsync,False
+ToDo10=Render audio with RB limiter and count-in,False
+ToDo11=,False
+ToDo12=Click to add new item...,False
+ToDo13=Click to add new item...,False
+ToDo14=Click to add new item...,False
+ToDo15=Click to add new item...,False
+
+Magma: C3 Roks Edition To Do Template End

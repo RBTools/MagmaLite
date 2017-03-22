@@ -1,0 +1,117 @@
+
+
+;the default camera pacing
+;can be one of the following:  
+;   'minimal', 'slow', 'medium', 'fast', or 'crazy'
+(camera_pacing medium)
+
+(section_presets
+
+   (default 
+      (allowed_lightpresets manual_warm manual_cool)
+      (allowed_postprocs photo_negative.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 4)
+      (postproc_blendin 1)
+   )      
+   
+   (intro   
+      (allowed_lightpresets loop_warm searchlights)
+      (allowed_postprocs contrast_a.pp)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )    
+   
+   (verse1
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (verse2
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (verse3
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )   
+   
+   (bridge
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs contrast_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (solo
+      (allowed_lightpresets frenzy)
+      (allowed_postprocs ProFilm_a.pp)
+      (postproc_blendin 1)
+   )  
+   
+   (prechorus   
+      (allowed_lightpresets verse)
+      (allowed_postprocs horror_movie_special.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 2)
+      (postproc_blendin 1)
+   )  
+   
+   (chorus1
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (bonusfx_at_start)
+      (dircut_at_start directed_all)
+      (postproc_blendin 1)
+   )
+   
+   (chorus2
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (bonusfx_at_start)
+      (postproc_blendin 1)
+   )
+   
+   (chorus3
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (bonusfx_at_start)
+      (dircut_at_start directed_all_cam)
+      (postproc_blendin 1)
+   )
+   
+   (postchorus
+      (allowed_lightpresets strobe_fast)
+      (allowed_postprocs photocopy.pp)
+      (postproc_blendin 1)
+   )
+   
+   (main_riff
+      (allowed_lightpresets chorus)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   ) 
+   
+   (outro
+      (allowed_lightpresets frenzy)
+      (allowed_postprocs horror_movie_special.pp)
+      (postproc_blendin 1)
+   )
+
+)

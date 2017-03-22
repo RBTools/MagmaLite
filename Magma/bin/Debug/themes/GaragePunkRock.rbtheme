@@ -1,0 +1,126 @@
+
+
+;the default camera pacing
+;can be one of the following:  
+;   'minimal', 'slow', 'medium', 'fast', or 'crazy'
+(camera_pacing medium)
+
+(section_presets
+
+   (default 
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 2)
+      (postproc_blendin 1)
+   )
+   
+   (intro   
+      (allowed_lightpresets loop_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (preverse
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (verse1
+      (allowed_lightpresets verse)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (verse2
+      (allowed_lightpresets verse)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (verse3
+      (allowed_lightpresets verse)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )  
+   
+   (bridge
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (solo
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )   
+   
+   (prechorus   
+      (allowed_lightpresets verse)
+      (allowed_postprocs  ProFilm_a.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 2)
+      (postproc_blendin 1)
+   )  
+   
+   (chorus1
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (postproc_blendin 1)
+   )
+   
+   (chorus2
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (postproc_blendin 1)
+   )
+   
+   (chorus3
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (postproc_blendin 1)
+   )
+   
+   (postchorus
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (main_riff
+      (allowed_lightpresets chorus)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   ) 
+   
+   (outro
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 1)
+      (postproc_blendin 1)
+   )
+
+)

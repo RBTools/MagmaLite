@@ -1,0 +1,156 @@
+
+
+;the default camera pacing
+;can be one of the following:  
+;   'minimal', 'slow', 'medium', 'fast', or 'crazy'
+(camera_pacing medium)
+
+;extra practice sections you'd like to create an entry for in section_presets
+(extra_sections
+
+   (spacey
+      (practice_sections "*spacey*")
+   )
+
+   (trippy
+      (practice_sections "*trippy*")
+   )   
+      
+)
+
+(section_presets
+
+   (default 
+      (allowed_lightpresets harmony sweep)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )      
+   
+   (intro   
+      (allowed_lightpresets silhouettes_spot)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (spacey
+      (allowed_lightpresets dischord)
+      (allowed_postprocs clean_trails.pp)            
+      (lightpreset_blendin 2)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+   )
+
+   (preverse  
+      (allowed_lightpresets harmony)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )    
+   
+   (verse1
+      (allowed_lightpresets loop_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (verse2
+      (allowed_lightpresets loop_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (keyframe_rate 4)
+      (postproc_blendin 2)
+   )
+   
+   (verse3
+      (allowed_lightpresets loop_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (keyframe_rate 4)
+      (postproc_blendin 2)
+   )   
+   
+   (bridge
+      (allowed_lightpresets loop_warm manual_cool silhouettes_spot)
+      (allowed_postprocs desat_posterize_trails.pp)
+      (lightpreset_blendin 2)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+   )
+   
+   (solo
+      (allowed_lightpresets sweep)
+      (allowed_postprocs film_contrast_blue.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )   
+   
+   (prechorus   
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs  ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+   )  
+   
+   (chorus1
+      (allowed_lightpresets searchlights)
+      (allowed_postprocs film_contrast.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 2)
+      (postproc_blendin 1)
+      (dircut_at_start directed_all)
+   )
+   
+   (chorus2
+      (allowed_lightpresets searchlights)
+      (allowed_postprocs film_contrast.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 2)
+      (postproc_blendin 1)
+   )
+   
+   (chorus3
+      (allowed_lightpresets searchlights)
+      (allowed_postprocs film_contrast.pp)
+      (lightpreset_blendin 1)
+      (keyframe_rate 2)
+      (postproc_blendin 1)
+      (dircut_at_start directed_all_cam)
+   )
+   
+   (postchorus
+      (allowed_lightpresets manual_cool)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (main_riff
+      (allowed_lightpresets dischord sweep)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )  
+   
+    
+   (trippy
+      (allowed_lightpresets sweep)
+      (allowed_postprocs clean_trails.pp)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+   )
+
+   (outro
+      (allowed_lightpresets searchlights)
+      (allowed_postprocs film_contrast_blue.pp)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+
+)

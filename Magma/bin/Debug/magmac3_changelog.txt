@@ -1,0 +1,605 @@
+Magma: C3 Roks Edition v3
+Brought to you by Customs Creators Collective
+Visit us at www.customscreators.com
+
+-------------------
+
+FEATURES / CHANGE LOG:
+
+v3.3.1
+NEW FEATURES
+- When importing a CON file, you now have the option to automatically separate the MOGG into the component tracks and add them to your project
+- Can now drag/drop (or click on the ... button to select manually) FLAC, OGG and MP3 audio files to the audio boxes (they will be converted to WAV automatically)
+- Can now import Phase Shift song.ini files - drag/drop the song.ini file to the program or click on Import... -> Import song.ini file - if any OGG files are found you will be asked if you want them to be imported as well and if so, they will be converted to WAV automatically - if notes.mid or album.png are found they will also be loaded
+- Can now convert isolated vocals stem to dryvox (16,000Hz mono) file by right-clicking on the Lead dry vocals box and choosing 'Convert vocals stem to dryvox' - this takes the first channel of the vocals stem and converts it to 16,000Hz - works best with mono vocals stems or stereo vocals stems with audio on the left channel (i.e. virtually every vocals stem)
+- Can now right-click on Harmony 2 or Harmony 3 dry vocals boxes and copy the Lead dry vocals file when using the same file for multiple dry vocals
+- Can now Send to RBtoUSB after compiling for easy transfer of your newly compiled custom(s) to your USB drive
+
+FIXES
+- Fixed importing of songs with pro guitar/pro bass in the songs.dta file
+- Fixed behavior that when enabling 'Wii import' after loading a project wouldn't change the encoding quality
+- Fixed image handling behavior to prevent the constant recreation of the album art files whenever a project was loaded
+- Fixed behavior when using Wii Mode that allows audio quality lower than 3 (before was fixed at 3)
+- Fixed bug when loading a project with too high an encoding quality while using Wii Mode (now resets to max of 3)
+- Fixed bug where two songs could end up with the same unique ID if both projects were open at the same time and neither had a song ID assigned yet
+- Fixed bug where a song with PART REAL_GUITAR_22 would throw an error about not having PART REAL_GUITAR
+- Fixed bug where custom skins wouldn't load the next time Magma: C3 was opened
+- Fixed bug where some settings would not save across uses
+- Fixed bug that would cause two confirmation prompts to show up when importing a song while you had unsaved changes to your open project
+- Fixed bug where album art size sometimes would reset to 256x256 after compiling a song
+- Fixed bug that would reset the milliseconds value for the song preview start to 0
+- Fixed small issue with audio encryption that would cause problems when converting for PS3 use
+- Other minor bug fixes and code improvements
+
+----------
+
+v3.3.0
+FIXES
+- Improved audio encryption strength (don't worry, it's still optional for non-C3 authors)
+- Fixed bug where not supported audio tracks would accumulate and list multiple entries
+
+----------
+
+v3.2.9
+FIXES
+- Changed from using SoX for audio playback to using BASS.NET so Windows Vista (and maybe Windows XP?) users should be able to preview the song audio without problems
+
+----------
+
+v3.2.8
+NEW FEATURE
+- Added check to prevent compiling of songs with the backing track audio used for every instrument
+- Added check to prevent compiling of songs with PART REAL_GUITAR_22 and PART REAL_BASS_22 without their standard 17 fret option
+- Added check to prevent compiling of songs with invalid PART REAL_GUITAR or PART REAL_BASS note velocities
+
+FIXES
+- Fixed bug that broke auto-generation of keys animations and fake pro keys charts
+- Various other bug fixes and improvements
+
+----------
+
+v3.2.7
+NEW FEATURE
+- Added button on main form to easily select whether to encrypt the song's audio or not
+
+FIXES
+- Fixed 'bug' caused by the updated NAudio.dll which would throw a Debug.Assertion message when cleaning certain MIDI files
+- Various under the hood fixes and improvements when working with MIDI files (thanks to raynebc for the update to midishrink)
+- Other minor bug fixes and improvements
+
+----------
+
+v3.2.6
+NEW FEATURE
+- Added ability to play the in-game audio preview - just press Play in the Audio Tab
+- Added ability to cancel the batch song id replace process so you don't have to wait until it finishes
+- Added ability to leave in Phase Shift Expert+ drum notes (note 95) in your REAPER project, Magma: C3 will remove them prior to compiling your song
+
+FIXES
+- Improved importing of songs.dta/CON files
+- Added notification when user tries to compile a song without ever having saved the project
+- Added notification when user tries to compile without enough audio tracks and might end up with a corrupt audio file
+- Changed behavior so all file names and file paths in the CON file will be in lowercase for better compatibility for PS3 users
+- Improved code for DevIL's wrapper for safer and faster interaction with DevIL.dll, used in the image handling and editing album art
+- Improved code for HMX's own MagmaCore wrapper for safer interaction with MagmaCore.dll (just a technical fix)
+- Now using leaner version of NAudio.dll, trimmed and improved for much more accurate timing of notes and lyrics when working with MIDI files
+
+----------
+
+v3.2.5
+FIXES
+- Fixed songs compiling without a song ID in the songs.dta file that would happen for songs without 2x bass pedal versions
+- Improved importing of existing songs to carry over the existing unique numeric ID if the song already has one
+- Reworked the underlying code for the importing of songs.dta files
+- Fixed other minor bugs
+
+----------
+
+v3.2.4
+NEW FEATURE
+- Added feature to automatically back up and restore (will ask you to confirm) the configuration file and song counter so nothing is lost from one install of Magma: C3 Roks Edition to another going forward
+
+FIXES
+- Modified behavior to assign and display a numeric ID the first time you save a project so you don't have to wonder what the ID assigned will be
+- Fixed building of double bass pedal songs that would use the 1x MIDI in both CONs
+- Fixed loading and saving of custom audio encoding quality (was reversed before if you chose anything other than default)
+- Removed annoying pop-up when building a song that reminds you it's got 2x MIDI in the file - it was supposed to and now only shows up when you throw the MIDI at the project
+- Fixed interface bug where context menu would have the text right-aligned if the path to the audio file was too long
+
+----------
+
+v3.2.3
+NEW FEATURE
+- Added feature to batch restore the original song IDs for songs which you replaced the IDs with numeric values using the batch replace tool - put all the CON files to be processed (individual songs/or packs) in the same folder, click on Options -> Use unique numeric song ID -> Batch restore song IDs and select the folder where you put the files, sit back and wait until it's done - that's it!
+
+FIXES
+- Improved behavior for using numeric song IDs: the initial behavior was to assign a new ID for every single time you compiled a song, which meant if you ever re-compiled your song, you would lose your scores. Now each song is assigned one unique ID (and if it has a 2x version, that also gets its own unique ID), and it is only changed if you click on the New ID button. This ensures that you can fix your song and release the updated version later on without worrying about the scores being lost
+- Improved batch replace song IDs feature to only replace alphanumeric IDs in custom songs, improved its detection of valid numeric IDs to avoid replacing valid IDs with new ones (which would make you lose the scores) and other improvements to the process. This tool is not intended to be used with official DLC or RBN content, and will accordingly no longer modify those IDs/files
+
+----------
+
+v3.2.2
+NEW FEATURE
+- Added feature to batch replace song IDs with unique numeric values - put all the CON files to be processed (individual songs/or packs) in the same folder, click on Options -> Use unique numeric song ID -> Batch replace song IDs and select the folder where you put the files, sit back and wait until it's done - that's it!
+
+----------
+
+v3.2.1
+FIXES
+- Fixed numeric IDs to work properly after user feedback showed some problems with prior code
+- Fixed compilation of MIDI files with combined 1X and 2X drum tracks, now 1x and 2x CONs are built correctly again
+- Other minor fixes and improvements
+
+----------
+
+v3.2
+NEW FEATURES
+- Added option to replace song ID with a unique numeric value - enable in Options -> Use unique numeric song ID. More information on this will be posted in the forum thread
+- Added explanations that will show for the more typical errors users experience during compilation and while using MIDI Tester
+
+FIXES
+- Removed context menu showing up when left-clicking on audio boxes as this broke ability to click and type into them - can still bring up context menus by right-clicking
+- Fixed error thrown by compiler if author didn't change the genre/subgenre from default value
+- Fixed bug where pro guitar or pro bass wouldn't save if you only enabled it but didn't click on a difficulty bubble
+- Included blank backing audio required for MIDI Tester that was left out of last release
+- Other minor fixes and improvements
+
+----------
+
+v3.1
+FEATURES BACK BY POPULAR DEMAND
+- Option to create LIVE instead of CON files
+- Option to use 24-bit silence tracks by default
+- Ability to use 24-bit silence tracks by right-clicking on an audio track
+- Ability to use custom skins
+
+FIXES
+- Major bug where if the song had instrument solos the resulting songs.dta file would be missing the song_id line (and the song wouldn't show up in game then)
+- Bug where song version would be added to song ID regardless of selection in Options
+- Various other small bug fixes and adjustments
+
+----------
+
+v3.0
+NEW FEATURES
+- Ability to mark which instruments have solo sections in your songs - see Help button for more information on this
+- Option to 'Analyze MIDI file for contents' - enabled by default, disable under Options - will read the MIDI when you add it to the project file and find instruments present, which instruments have solos, and which percussion type to enable
+- Ability to detect and mark solo sections when importing a CON or DTA file
+- CAT EMH button to indicate songs with lower difficulties fully autogenerated by CAT - if you use CAT and then polish the results manually, you shouldn't use this - will be picked up by Visualizer like all other buttons
+- Added context menu (right-click) to album art with handy link to Album Art Repository
+- Context menu for the audio files shows up now with both right and left clicking for easier access
+- Context menu for thumbnail displays automatically when hovering over it
+- File selector for when multiple override files are present when building a song - before it would choose by default the first file found, now you get to choose or, if no response is received within 15 seconds, it defaults to the first file found
+- Added option to disable automatically increasing song version after every build (before was always enabled)
+
+FIXES
+- Complete reworking of how adding/selecting album art works: album art displayed in Magma is exact file name and file that you provide it, a 256x256 bitmap is created only for MagmaCompiler (required but we won't use it anywhere else), and a high quality DXT5 *.png_xbox file is created for the CON file, using whatever album art size you have set in the Options, all happening at once, for higher quality, more accurate, and less buggy album art
+- When selecting file names now is based on CON name instead of RBA, can see in real time what the filename will be with and without song version and _rb3con appended to it
+- Rerecord year and release years are now in the right places
+- Audio encoding quality is now organized in correct order
+- Improvements to how manually editing the song version works for less bugs and a smoother experience
+- Considerable code cleaning and improvements throughout the whole program
+
+REMOVED several 'features' that were cluttering the code and barely being used. If you want to use them, stick with v2.2.
+
+----------
+
+v2.2
+- Added ability to change album art dimensions (under Options -> ADVANCED SETTINGS)
+- Code changes to improve opening directly into MIDI Tester
+- Enabled Test and Clean buttons for use when a MIDI file is selected even if the rest of the project isn't ready
+- Change to allow MIDI Tester to display ALL output from MagmaCompiler
+- Made Magma logo clickable link to the Magma: C3 Roks Edition thread in our forums
+- Fixed bug where a preview start time longer than 10 minutes would not save after closing the project
+- Changed behavior to use stereo blank files by default instead of mono to avoid some of the audio corruption bugs reported
+- Considerable streamlining of several portions of the code
+-----poorly made skins may no longer work correctly - if that happens, make sure you're following the instructions in the template
+-----your old settings will be reset - just make sure to put your settings back after installation and they will be maintained fine after that
+- Fixed album art bug that would overwrite png_xbox in project folder with new one based on project bmp file
+- Considerably expanded the toast notifications to cover all the new additions and settings that did not yet have them
+- Various other bug fixes and improvements throughout
+
+----------
+
+v2.1.8b
+- Fixed bug that would prevent compilation of song introduced in v2.1.8
+
+----------
+
+v2.1.8
+- Added ability to read and create higher quality *.png_xbox files for superb album art quality (see tutorial on our forums' Magma: C3 Roks Edition thread)
+- Fixed small bug that would ask twice if you were sure you wanted to exit if you had unsaved changes
+
+----------
+
+v2.1.7
+- Added option to specify preview start milliseconds and fixed bug where that value entered manually in the C3 Fix file (projectname.c3) would get overwritten during loading of the Project File
+- Patched up potential memory leak when sending MIDI files to midishrink (and includes fixed midishrink.exe thanks to raynebc)
+- Changed behavior to include not checking for missing vocal overdrive and missing drum fills when "Bypass Nemo's MIDI Validator" is checked
+- Improved how moving of files works throughout the program for better performance and lower likelihood of crashes
+- Fixed bug when sending files/folders to Recycle Bin which sometimes would fail and leave the files/folders behind
+- Other minor bug fixes and improvements
+
+----------
+
+v2.1.6
+- Added CLEAN button to Game Data tab, next to the EXPORT and TEST buttons. This will send your MIDI file directly to MIDI Cleaner (you must have C3 CON Tools v2.4.0 or newer installed) and after cleaning will backup your "dirty" MIDI and move the cleaned MIDI to your project folder
+- Further enhancements to the code for stability and to remove some redundancy throughout the entire program
+
+----------
+
+v2.1.5
+- Added support for importing of PS3 album art images (*.png_ps3)
+- Added check during build for old format PART HARM# track names
+- Fixed importing bug that would cause a crash while trying to send the mogg file to Audacity
+- Fixed importing bug that would not save the preview time to the project file
+- Fixed importing bug that would not correctly enable instruments if the difficulty was 1 (lowest after "NO PART")
+- Improvements to code efficiency and stability
+
+----------
+
+v2.1.4b
+- Tiny update to increase accuracy of error reporting in MIDI Tester or during building of a song
+
+----------
+
+v2.1.4
+- Added option to use the included blank dryvox file, just right click on any of the dryvox boxes and select "Blank Dryvox" - C3 releases are required to use a proper dryvox file, but this is great for testing purposes and for importing of existing CON files
+- Added behavior to automatically copy the existing *.milo_xbox file when importing an existing CON file and enable "Override animations file" - This allows you to keep the exact lip sync from the file you're importing. Use the blank dryvox file mentioned above to expedite the process. Delete the *.milo_xbox file if  you are planning to make your own dryvox file
+- Several bug fixes and code improvements aimed to reduce likelihood of encountering a fatal crash
+
+----------
+
+v2.1.3
+GENERAL
+- Added check for when [music_start] is found too early in the EVENTS track - now Magma will let you know before you compile the song
+- Changed behavior so now MIDI files with PART DRUMS_2X are detected when you press the Build button
+- Completely gutted and redid how difficulty tiers are stored and shown. Looks the same, everything under the hood is new. Should eliminate the visual bugs reported and is easier to maintain going forward.
+- Improved logging during the Build screen to include exact [measure:beat:ticks] location rather than prior approximate time in seconds
+- Fixed bug where attenuation values for drum stems were not saving after closing the project
+- Changed behavior to allow setting the preview time before adding any audio files. "30 seconds before length of the song" restriction is still in place once an audio file is added, but this allows you to set and save the preview time early in the creation of the Magma project.
+- Fixed bug where the difficulty tiers for Pro Guitar / Pro Bass would be read incorrectly when importing an existing CON file
+- Expanded country list to all (?) 257 countries in the U.N. list. Go nuts.
+- Added country to the song's DTA file for possible future use in C3 tools / database / etc
+
+MIDI TESTER
+- Improved code to be able to read some MIDI files in the past it couldn't (thanks raynebc)
+- Added some code to hopefully prevent MIDI Tester from being stuck in permanent loops - if after one minute it's still processing, it'll ask you whether you want to abort rather than continue (and presumably stay stuck in the loop)
+- Improved logging of errors found to include exact [measure:beat:ticks] location rather than prior approximate time in seconds
+- Added code to prevent "testing" of MIDI files without instrument/vocal charts. MagmaCompiler requires at least one, you can't just "test" venue/events/beat tracks.
+- Added "Send to MIDI Cleaner" button that will be displayed if errors are found in your MIDI file. You must have C3 CON Tools v2.4.0 or newer installed on the same computer.
+
+----------
+
+v2.1.2
+- Added check for missing drum overdrive fills and vocal overdrives as MagmaCompiler allows them through and it's very easy to miss the notification in the log. Now Magma will notify you if you're missing either one and whether you intended to compile the song that way.
+- Improved all instances where Magma / MIDI Tester read/process MIDI files. This means MIDI Tester will be able to read some files that it would throw errors on before.
+- Other minor improvements
+
+----------
+
+v2.1.1
+- Expanded MIDI Tester / MIDI Validator to account for old MIDIs that have the tonic note as a midi note in PART VOCALS / HARM parts
+- Fixed bug that would result in both 1x and 2x versions having (2x Bass Pedal) in the name when using the auto 2x bass feature
+- Fixed bug that would allow you to build an "rba" file with the .rba extension, which would fail the RBA -> CON process
+- Fixed other minor bugs
+
+----------
+
+v2.1
+(NEW!) - Added ability to compile 1x and 2x bass pedal songs with only one MIDI file / project! To do this, you must have PART DRUMS and PART DRUMS_2X in the MIDI. When adding that MIDI to the project, Magma will pick it up and mark the song as 2x Bass Pedal. When you "Build" the song, Magma will do all the MIDI magic necessary and you'll have both the 1x and 2x CON files, as well as the 1x and 2x RBA files if you choose to keep them. Each track is compiled in turn to ensure both comply with all requirements. This ensures that all other MIDI tracks and project metadata is always correct across both versions since you only have to maintain one! And of course, saves you time. YOU DO NOT HAVE TO USE THIS. Old way of doing things still works the same.
+- Added ability to use TIFF (*.tif), GIF (*.gif) and DDS (*.dds) images for the album art
+- New method for creating png_xbox images will generate better looking album art with less artifacts than before
+- Expanded ability to open MIDI Tester by sending a MIDI file to Magma via command line without needing to include -miditester in the argument. This means you can now right-click, Open With and send MIDI to Magma and go directly to MIDI Tester.
+- Fixed bug where using File - Save As would also alter the old project file and old Custom ID would be carried across projects
+- Fixed minor bug that would prevent HOPO notes on 5-lane keys
+- Added ability to bypass MIDI Validator ... this is in case there is anything else that I broke and I am no longer around to fix it.
+- Fixed bug where preview start would not default to the intended 0:30 unless you modified it in some way
+- Fixed HOPO Threshold selection being disabled when opening Magma by double-clicking on an existing project
+- Fixed bug that would lead to crash if you cancelled out of the Select C3 CON Tools Path screen
+- Fixed bug that would assign recording and re-release dates incorrectly when importing a CON
+- Fixed bug that would make the "Send to Audacity" prompt disappear when importing a CON if "Show Toast Notifications" was enabled
+- Fixed bug that would make drag/dropping of audio files after importing a CON file not work unless you closed/reopened the project
+- Fixed bug that would fail to add drum mix events if none were found in the PART DRUMS track
+- Fixed bug that would not display the errors when audio files loaded into Magma were not in the correct sample rate or have the correct amount of channels
+- No longer using Tao.DevIL.dll or ILUT.dll (you can safely remove them if you still have them, no longer included with the program files)
+
+----------
+
+v2.0
+SKINS! 
+- Magma now includes three built-in skins: "Old & Dark" (default), "Shiny & New" and "C is for Colorful"
+- Also added support for custom skins - create a .skin text file and put it in the (MagmaDirectory)/skins/ folder. Choose it from the Options - Skins menu, or drag/drop it to the form. Will remain default skin even after closing Magma until you change it to another skin. Many things can be skinned, refer to the template files for more information. Share your skins!
+- Added ability to take a screenshot of Magma for those of you who want to display and/or share your skins: just press the Print Screen button and a screen capture is saved to Magma's install directory. By default, the image will also be uploaded to Imgur and the link will be copied to your clipboard, so you can just paste it anywhere you need to link to the image. The Imgur page will also be opened so you can verify the image. You can disable the uploading feature under Options - Skins.
+
+TO DO LIST! 
+- Added feature to keep track of up to 15 to-do items per song. Each item can be marked as Important and/or Completed. Important items are marked yellow, Completed items are marked green for easy visual reference. Any Important items that are not Completed will prevent you from compiling the song and will remind you when you click Build. Each project gets assigned the items in default_template.todo. You can modify this file manually with a text editor or edit the To Do List in Magma, and click on the Hard Drive icon and choose 'Save current list as template' and name it default_template if you'd like to change the default template used for every song. You also have the choice of keeping a variety of templates, just click on the Hard Drive icon and choose 'Load existing template'.
+
+MIDI TESTER! 
+- By popular request, added yet another way to simplify your life. Want to know if a MIDI you were given or found online is ready to compile without having to first set up a Magma project, track down the audio, etc? MIDI Tester will do it all for you, all you have to do is drop your MIDI file onto it, and sit back. MIDI Tester will create a project based on the MIDI information and try to compile it, and let you know what problems, if any, the MIDI file has, all in 2-5 seconds! Among the things it does, MIDI Tester will let you know if the MIDI passes a basic EMH check for reductions. You can click "Open MIDI" to select one or multiple MIDI files. You can also drag/drop one or multiple MIDI files. Files will be opened and processed in turn. If you open MIDI Tester while you have a project open in Magma, the current project's MIDI file is automatically loaded into MIDI Tester.
+- MIDI Tester can be opened via command line: use "-miditester <midi file>" and it'll be loaded straight into MIDI Tester. Replace <midi file> with the full path to the midi or a relative path to Magma's installation directory (i.e. if it's in MagmaFolder/test.mid you can use "-miditester test.mid")
+
+IMPROVEMENTS
+- Massive consolidation and cleaning up of the code into single NemoTools class = more efficient, easier to maintain and significantly less lines of code overall	
+- All instances where there is image handling should now be more efficient and accurate	
+- No longer using x360.dll, using my own modified and considerably slimmer version of the code (you can safely delete x360.dll from your directory)
+- Expanded MIDI validation to included 5 lane keys and pro keys - this is to work around the bugs in MagmaCompiler from the hacking we've done. This ought to throw errors at you similarly to how MagmaCompiler does and should prevent random unexplained crashes when building. Moved to the Build form to display inline with the rest of the compile log.
+- Expanded MIDI Validator to ensure Pro Keys has BRE marker when Standard Keys has them (original MagmaCompiler would not flag this)
+- Expanded MIDI Validator to check for lower difficulties being present for Pro Guitar/ Pro Bass charts (original compiler did not check for this at all)
+- Added MIDI validation to Export MIDI function
+- Moved MIDI Autogen (generates fake pro keys, keys animation, adds drum mix events) to Build form to display inline with the rest of the compile log
+- Expanded MIDI Autogen to automatically replace "section " with "prc_" to make [most] old section names compatible with RBN2.0
+- Expanded MIDI Autogen to account for disco flip as well as old, unsupported mixes (will be replaced). Also will now process the entire drums chart, rather than only the first four drum mix events (mainly useful for charts with disco flips)
+- Added support for 24-bit silence tracks (included in the audio folder)
+- Enabled typing in of song preview minute field
+- Added workaround (hopefully) for issue when you move your project folder around and files can no longer be found
+- Cleaned up and improved logging during song build
+- Cleaned up Magma directory, moving most of the .dlls and other files to \bin
+
+BUG FIXES
+- Fixed bug where animation speed would not be loaded when reading project file
+- Fixed bug where Song Name and Artist Name would not be saved to Project File during importing of CON/LIVE file
+- Fixed bug where attenuation values were not being saved correctly
+- Fixed bug where some song IDs would be corrupted when importing a CON/DTA file
+- Fixed bug that left HOPO Threshold drop-down enabled even when the song had no guitar/bass/keys. Now it is disabled unless either Guitar, Bass or Keys are present in the song
+- Fixed bug that assumed your Magma project file was in the same folder as the RBA file (would cause problems with the overriding features)
+- Fixed bug where if audio file saved in your project was not found might lead to a crash depending on the path
+- Fixed bug where Audio Compiler would throw an error based on incorrect file path to the audio stems
+- Fixed various other minor bugs
+
+----------
+
+v1.3.5
+- Fixed bug where names with quotes in them would compile fine the first time around but second time would cause a compiler error
+- Fixed bug where drum mix events would not always be saved to midi file 
+- Moved "Wii conversion" option to fix floating menu bug
+
+----------
+
+v1.3.4
+- Added ADVANCED options to override all files in the final CON: select the option under ADVANCED settings and any *.mogg, *.milo_xbox or *.png_xbox file in the same directory as the Magma (.rbproj) project will be replaced into the final CON. Since you're likely to have the original midi in the project directory, to override the MIDI name the new MIDI file "override.mid" and put that in the same directory as the Magma project. If you don't know what you would use these features for, please DO NOT USE THEM.
+- Added option to add the correct drum mix events to your MIDI by default. If mix events are already present they are replaced. Enabled by default but can be disabled/enabled on a song-by-song basis. Strongly recommend leaving this enabled - no more drum mix headaches!
+- Greatly improved the drum mix algorithm to more accurately find the correct drum mix
+- Added ability to compile using special characters äëïöü
+- Added Copy and Paste to the context menu for the audio files
+- Enabled context menu on the Backing, Crowd and Dry Vocals text boxes
+- Added "Wii conversion" option under 'Import CON/LIVE file" - Enable this and the settings will be set to the optimal values for the Wii (set Encoding Quality to 3, disable Crowd Audio, add "_wii" to the song id, populate the dry vox fields with blank files, and you get a button to send directly to the Wii Converter after the song is compiled) - The option persists so if you only use Magma to import and fix songs for Wii conversion, you don't have to re-select this option.
+- Added ability to "Import DTA" / "Import CON/LIVE files" functions to read whether the song being imported had crowd audio and enable it in the importing process
+- Added context menu to clear custom package thumbnail
+- Added option to drag/drop image to custom thumbnail box
+- Added "Zero" button for the Crowd Attenuation field
+- Fixed bug where if you disabled keys in a song, the autogeneration of fake pro keys would still attempt to take place
+- Changed some of the code to hopefully reduce the "can't access file because it is being used by another program" errors
+- Added help messages to most of the menu options (just hover over it and it'll pop up)
+- Fixed bug where saving Encoding Quality as 10 would be read back as Encoding Quality 1 when loading the project
+- Fixed bug that would cause a crash when the RBA name contained the letter "v" in it
+- Fixed other minor bugs and made various improvements to the code
+
+----------
+
+v1.3.3
+- Added option to globally disable checking for tempo maps (under Options - ADVANCED SETTINGS)
+- Added option to disable checking for tempo map on a song by song basis - under 'Game Data' just uncheck "Check for tempo map" if you don't want THAT song to be checked. Options persist so you only have to set this once per song.
+- Added new way to display help information that should be neater and allow for expansion in the future
+- Allowed select all (Ctrl + A) and copy (Ctrl + C) in the Build Form log
+- By popular demand, song rating now defaults to 'Unrated'
+- Cleaned up some code dependencies
+
+----------
+
+v1.3.2
+- Added check for disallowed notes on PART KEYS_ANIM_RH and PART KEYS_ANIM_LH to avoid MagmaCompiler crashing without telling you why
+- Added ability to use quotes in song metadata (song name, artist name, album name)
+- Added check to ensure tempo map is embedded in song (no more n00b mistakes)
+- Greatly improved Import DTA function
+- Fixed some bugs with the autogeneration of fake PART REAL_KEYS_X
+- Fixed bug that would make typing in preview time seconds very annoyingly difficult
+- Changed suggested drum mix from "[mix <difficulty> drums0]" to "[mix # drums0]" for quicker use. Just replace the "#" with the difficulty number (Easy - 0, Medium - 1, Hard - 2, Expert -3)
+- Fixed a few other minor bugs
+
+----------
+
+v1.3.1
+- Fixed crowd audio channels being assigned 2 channels too high
+- Changed default attenuation for crowd audio to -5
+- Changed how Magma checks prior to build, will also tell you when the file is missing (before would just say it wasn't supported but not why)
+- Fixed bug where errors telling you that an audio stem was missing would get cleared during loading, so you would never seen the error
+- Fixed bug where original png_xbox was not being used by Magma since it was being overwritten
+- Fixed bug where sometimes drag and dropping a png_xbox image to the album art spot would cause a crash
+- Fixed Recommended Drum Mix showing "Unsupported" when the song has no drums - now it's hidden
+- Fixed leftover .rbdeps and .rbdeps.new files that trigger re-creation of the mogg even when the existing .rba file is there. This *should* remove those times it would recreate the rba even when it was there.
+
+----------
+
+v1.3.0
+- Added option to auto-generate 'fake' pro keys - if you only chart 5-lane keys, you no longer have to do the 'fake' pro keys steps or the keys animation - just select the right option and Magma will autogenerate fake pro keys and/or keys animation for you at build time...all you need is the 5-lane keys chart!
+- Enabled crowd audio / sing-alongs! Just specify the crowd audio track like you would any other stem...must be in WAV format, stereo, 16-bit or 24-bit, 44100Hz or 48000Hz...you must have Crowd Volume up in the game or you won't hear it!
+- Added Mute Volume Vocals field to specify how low the vocals stem volume is when the singer fails...click on the Help button for more information
+- Added Mute Volume field to specify how the instruments stems volume is when the player misses...click on the Help button for more information
+- Added (and enabled by default) option to use the included 1-second silence tracks for your instruments. You can disable this if you mostly work with multi-track customs. For most users, leave it enabled to save you time. Choose from 44.1 kHz or 48 kHz. All instruments are set to mono except drum_kit, that is set to stereo (game requirement). Backing is left alone so you can drop your backing track there.
+- Added option to right-click and select a variety of silence tracks for each instrument (in case the default setting is not what you want)
+- Added option to right-click and choose to clear the file path for the audio stems
+- Added option to save the current author as the "Default Author" - just click on the checkmark that shows up next to the Author field. From there on, every time you create a new project this will be the default author, until you change it again
+- Added option to override the author in the project file with the Default Author - this is helpful if you have a bunch of past projects that you're fixing and they had a different name than what you're using now (i.e. Nemo vs TrojanNemo)
+- Greatly improved the 'Import CON / LIVE file' function code to work much more accurately and better preserve the information
+- 'Import CON / LIVE file' function now saves the Content Image from the imported CON - this is very helpful if it had a custom image (i.e. Beatles, etc)
+- Can now drag and drop a CON / LIVE file straight into Magma
+- Can now drag and drop a songs.dta file straight into Magma
+- Reworked how the suggested drum mix is calculated for higher accuracy
+- Fixed bug where the check that should ensure all your tracks are in matching sample rates wasn't working as intended
+- Added feature that will save your changes when you press Build
+- By popular demand, error markers no longer blink!
+- Fixed bug where any song with a re-recording date had the years switched
+- Fixed bug where some of the song data would be carried from one song to another when opening a song after another without closing Magma
+- Added "Copy to Clipboard" button for the Build Form. This will become visible if there is an error in the process. Just press it and paste it on a thread in our forums for help
+- Major reworking of the code for greater efficiency, less redundancy and better troubleshooting in the future
+
+----------
+
+v1.2.3
+- fixed bug that would prevent songs from compiling where the artist, song title or album included the y-umlaut character (ÿ)
+- fixed bug where if MagmaCompilerC3 wasn't present, Magma would crash rather than let you know - now prompts to find it
+- improved selection of UTF8 encoding - before it would tell you to select it, now Magma will select it automatically
+- improved how Magma will handle the Artist, Song Title and Album Name in general, bypassing MagmaCompiler's restrictions
+- other minor fixes
+
+----------
+
+v1.2.2
+- further bug fixes, no new features added
+
+----------
+
+v1.2.1
+- added option to change song tonality - this is mainly for expert users who want to beta test this function. DO NOT USE IF YOU DON'T KNOW WHAT IT DOES. DON'T ASK.
+- fixed bug where Magma would add pro guitar/pro bass entries on the songs.dta even after unchecking them in the project
+- fixed bug where Magma would add vocal tonic note value of 0 (C) instead of not adding it when it was unchecked
+- added catch for filenames longer than 26 characters...there is a combined filename + extension limit of 40 characters inside the CON, so to fit songname_keep.png_xbox, "songname" can't be more than 26 characters...Magma will shorten to 26 characters and let you know
+- added fix for filenames with characters that would / might mess up inside the CON, Magma will now remove things like #$%^*', and others from the filename
+
+----------
+
+v1.2
+- Added option to import CON / LIVE file (single songs only, no packs) - this will create a project folder, extract and move the audio (.mogg), album art (.png_xbox) and midi to the folder, create the Magma project, convert the album art and load it in the project, load the midi in the project, process the songs.dta file and set all the project settings and metadata to match, and save the Magma project for you...all you have to do is process the audio. Magma will give you the choice to open the mogg in Audacity for you to process
+- Added option to customize the Package Title Display (what you see on your Xbox dashboard) and the Package Description (only seen in C3 CON Tools, read by Visualizer too) with preset formatting or your own custom text
+- Added ability to customize Package Thumbnail (what you see on your Xbox dashboard)...it defaults to the same image as the album art, to change it, just click on the smaller image to select a different image to use
+- Added option to send the final CON to C3 CON Tools or to Visualizer from the Build form
+- Added option to select the compiler executable from within Magma - ADVANCED USE ONLY = 99% of you don't need to change this, but it's there for the 1% who might
+- Fixed several minor bugs...let me know of any others you find
+
+----------
+
+v1.1.5
+- added ability to drag and drop audio files into the audio boxes; drag and drop image files into the album art box; and drag and drop midi files into the midi box
+- changed behavior so when disabling a track, you no longer lose the reference to the old track or the previously selected difficulty, it will be there when you re-enable (not for Pro Guitar / Pro Bass to avoid game-crashing issues, those you got to re-check manually)
+- set "Delete Old RBA File" default to FALSE, so Magma can re-use the old RBA and compile quicker, you can enable it if you'd like a fresh start every compile
+- reworked the "Append Song Version to File Name" process = will only append to the CON, not the RBA, which allows Magma to re-use old RBA for quicker compilation
+- improved code for verifying all audio tracks are in correct format
+- other minor code improvements
+
+----------
+
+v1.1.4
+- enabled option to change audio encoding quality and raised default from 3 to 5
+- added option to automatically increment song version based on succesful build - can append this to the file and/or to the song ID. You can change it manually or let Magma add +1 everytime you build successfully.
+- re-enabled ability to type into the audio stems, rba file and album art directories (had been disabled previously)
+- various small miscellaneous improvements to the code
+
+----------
+
+v1.1.3
+- added option to mark song as Expert-only. this will be read by the upcoming Visualizer 2.0
+- added option to delete RBA after creating CON/LIVE file
+- added "Zero!" button for a one-click restore of the attenuation values to 0.0 (more clicks saved!)
+- added option to open this wonderful READ ME right from the About screen
+
+----------
+
+v1.1.2
+- fixed bug where Save File As would remove all spaces from the folder path instead of just the file name (oops)
+- fixed logic so if vocals are disabled, advanced vocal features are also disabled (i.e. vocal tonic note, tuning cents, etc)
+- fixed logic so if drums are disabled, drum kit sfx is disabled
+- previous update made the code for Encoding Quality default to 3, but since it's disabled, it was showing 10, now forced to show 3 until code is enabled later on
+
+----------
+
+v1.1.1
+- included the .hdr file that goes along with the ark file to ensure the program works regardless of which previous version of Magma you had
+- removed the Release Label section since we can't do anything with that
+- extra information will be saved to the songs.dta to work better with Visualizer
+- since now we know by default MagmaCompiler tells oggenc to encode the audio at quality 3 (rather than the assumed 5), that is the new default
+- minor aesthetic changes
+
+----------
+
+v1.1
+- expanded directed camera cuts limit to 50 per song
+- removed 18 track limit so now you can have a fully featured custom (21 tracks)!
+- removed "all difficulties must have at least one gem in every color" check (Guitar Hero easy/medium charts are good to go as is!)
+- added ability to create 4-note chords in guitar/bass/keys
+- added ability to compile 6-string bass/rhythm guitar charts on PART REAL_BASS
+- added option to include 4-string or 6-string tuning for pro bass
+- added extra values to hopo threshold (130 as found in Unbelievable; 90 as seen in Yoshimi Battles the Pink Robots, Pt.1)
+- removed "Use custom ID" menu option, replaced with Song ID box in Game Data tab...now see the current song ID and change it instantly by typing in the box!
+- no longer need to enter RBA name, will be automatically set from project name (i.e. just File -> Save As) - saving you yet a few more clicks. Can still change the RBA name if you want, or leave it as the project name (default)
+- fixed some issues with png_xbox images crashing the program when converting to bmp
+- added png_xbox to the list of allowed file formats when you use the button to search for images
+- added "Recommended Drum Mix" section under the Audio Tab, which will recommend the drum mix event to put at the start of your PART DRUMS track based on your audio selection, click on it to copy to clipboard, paste in Reaper
+- expanded preview time to allow you to set the preview start as high as 75 minutes into a (ridiculously long?) song (this will be reflected in the final CON/LIVE file only)
+- added function to check for size of the MIDI, if over 1MB (max allowed size), it uses raynebc's midishrink program to shrink the MIDI for you (1MB maximum file size is still in effect)
+- changed layout to account for option to change audio encoding quality (disabled for now while we figure out oggenc.exe)
+- changed layout to account for option to use a crowd audio track (disabled for now while we figure out oggenc.exe)
+- changed default song rating to Family Friendly
+- project names now will always save without spaces, to reduce chance of problems in game
+- little bit of code clean up, updates to how some things work, a few layout and code changes to try to improve on slow drawing (still trying to figure out the cause, bear with me in the meantime)
+
+----------
+
+v1.0
+- straight to CON or LIVE file from Magma! - pressing "Build" will give you both a RBA and CON / LIVE file, unlocked and ready for your Xbox (LIVE will NOT work on retail consoles!)
+- disabled 10 minute check - create songs of unlimited length with lipsync!
+- disabled pro guitar/pro bass check - Magma will compile your RBA with Pro Guitar/Bass midi tracks!
+- disabled need for "fake" pro keys charts when song has no pro keys, just need the 5-lane keys and the animations if you want them - YOU STILL HAVE TO MANUALLY DISABLE PRO KEYS IN MAGMA
+- expanded release year, now from 1000 (chanting monks?!) to 2112 (wink)
+- added more vocal scroll speeds (Comatose, Slower, Slow, Medium Slow, Normal, Medium Fast, Fast, Faster, Crazy)
+- default project has album enabled, drums, guitar, bass, vocals and backing track enabled
+- default preview time now at 0:30, so if you "forget" you still have something
+- default track attenuation changed to 0.0 from -3.0
+- set Arena Rock as default, so if you forget to change that, you have something
+- set default language to English, country to U.S.
+- set song id length limit to eliminate songs not working correctly in game
+- removed RBN price, we don't charge
+- removed updater code and menu button, don't want an "update" to mess with this baby
+- added ability to drag and drop project files (either song.rbproj or song.c3) into Magma to open the project
+- album art converts automatically when you open or drag and drop it
+- can now use original .png_xbox album art! it will convert to bmp for display purposes, but leave the original .png_xbox file in the directory that your .rbproj file is in and it will use that in the final con/live file
+- changed default paths to match input files = reduce time searching for audio, album art, etc
+- changed theme names to be easier to read and not have .rbtheme at the end
+- custom default album art, we're not RBN, why use that?
+- custom "MagmaC3" icon
+- heavy code optimization
+- many GUI and operational changes to make it more intuitive and a lot less painful
+
+THE FOLLOWING ADDITIONAL OPTIONS WILL BE SAVED IN A .C3 FILE AND WILL BE IN THE CON FILE. BUT NOT IN THE RBA FILE (I.E. NOT IN AUDITION MODE).
+
+- added option to specify custom song id (under Options menu)
+- added option to specify encoding (use UTF8 for songs with accented names like Michael Bublé or special characters like Queensrÿche)
+- added option to check/uncheck whether song is a master (default is checked, uncheck for cover)
+- added option to select pro guitar / pro bass difficulty tiers visually (like other instruments)
+- added option to enter pro guitar/ pro bass tuning information
+- added option to select song rating (defaults to 4 - Unrated)
+- added option to add vocal tonic note
+- added option to change tuning offset cents
+- added option to disable pro keys (default is if song has keys, song has pro keys, uncheck to disable)
+- added option to change HOPO threshold (only 170 and 250 are known values, let us know of any others)
+- added option to include recording year for songs that are re-records
+- added option to specify drum kit sfx (used during freestyle and before song starts)
+- added author information to songs.dta
+- added option to tag song as RB3 version, 2x Bass Pedal and/or Rhythm Version --- no longer need to enter this manually, Magma will do it for you (also will be recognized by upcoming update to Visualizer)
+- added option to tag song as multitrack, karaoke or convert (to be used with upcoming update to Visualizer)
+
+-------------------
+
+ACKNOWLEDGEMENTS
+
+Harmonix - for creating all the tools that make the RBN and customs possible. We are using Version 2.0.101.0, Build 110411_A of Harmonix's Magma as our base.
+
+TrojanNemo - lead programmer for Magma: C3 Roks Edition
+
+emist - for all the assembly-language hacking done to MagmaCompiler.exe, without which almost nothing else done would have mattered. Check out his programming / reverse engineering blog at http://eryanbot.com/jtp/
+
+Nyxyxylyth - for the base code to process and convert the RBA files to CON found in RB3Maker and original album art conversion code
+
+PikminGuts92 - for all the ARK file modifications, the guidance on the pro guitar / pro bass implementation, guidance with the extra metadata, and excellent beta testing and feature suggestions
+
+OrangeHarrison - for all the assistance with the extra metadata implementation, most importantly vocal scroll speeds, vocal tonic note and tuning cents offset
+
+NewCreature - for the oggenc changes, which allow us to change audio encoding quality and add crowd sing-alongs!
+
+raynebc - for the midishrink program to reduce 1MB+ midis to something more manageable, and for all the MIDI editing help
+
+The entire C3 Authors community, who beta tested and gave great feedback.
+
+-------------------
+
+For technical support or for more great tools like this one, visit our forums at forums.customscreators.com

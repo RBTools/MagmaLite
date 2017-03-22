@@ -1,0 +1,119 @@
+
+
+;the default camera pacing
+;can be one of the following:  
+;   'minimal', 'slow', 'medium', 'fast', or 'crazy'
+(camera_pacing medium)
+
+
+         
+(section_presets
+
+   (default 
+      (allowed_lightpresets loop_warm) 
+      (allowed_postprocs video_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )   
+   
+   (intro   
+      (allowed_lightpresets silhouettes_spot)
+      (allowed_postprocs  photo_negative.pp)
+      (lightpreset_blendin 4)
+      (postproc_blendin 4)
+   )      
+   
+   (verse1
+      (allowed_lightpresets silhouettes_spot)
+      (allowed_postprocs video_security.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (verse2
+      (allowed_lightpresets silhouettes_spot)
+      (allowed_postprocs video_security.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+   
+   (verse3
+      (allowed_lightpresets silhouettes_spot)
+      (allowed_postprocs flicker_trails.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 4)
+   )  
+   
+   (bridge
+      (allowed_lightpresets dischord)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+   )
+   
+   (solo
+      (allowed_lightpresets manual_warm dischord)
+      (allowed_postprocs shitty_tv.pp)
+      (keyframe_rate 2)
+      (postproc_blendin 2)
+      (lightpreset_blendin 2)
+   )      
+   (prechorus   
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs  ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+      (keyframe_rate 2)
+   )   
+   
+   (chorus1
+      (allowed_lightpresets chorus)
+      (allowed_postprocs photocopy.pp)
+      (keyframe_rate 1)
+      (dircut_at_start directed_all)
+      (postproc_blendin 1)
+      (lightpreset_blendin 1)
+   )
+   
+   (chorus2
+      (allowed_lightpresets chorus)
+      (allowed_postprocs photocopy.pp)
+      (keyframe_rate 1)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (chorus3
+      (allowed_lightpresets chorus)
+      (allowed_postprocs photocopy.pp)
+      (keyframe_rate 1)
+      (dircut_at_start directed_all_cam)
+      (lightpreset_blendin 1)
+      (postproc_blendin 1)
+   )
+   
+   (postchorus
+      (allowed_lightpresets dischord)
+      (allowed_postprocs video_a.pp)
+      (postproc_blendin 2)
+      (keyframe_rate 2)
+      (lightpreset_blendin 2)
+   )
+   
+   (main_riff
+      (allowed_lightpresets manual_warm)
+      (allowed_postprocs ProFilm_a.pp)
+      (keyframe_rate 1)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )  
+   
+   (outro
+      (allowed_lightpresets frenzy)
+      (allowed_postprocs ProFilm_a.pp)
+      (lightpreset_blendin 2)
+      (postproc_blendin 2)
+   )
+
+)

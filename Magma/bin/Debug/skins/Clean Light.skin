@@ -1,0 +1,102 @@
+//Magma: C3 Roks Edition Custom Skin Template
+//To comment a line, just add // at the beginning
+//For color settings, use RGB or Hex values. Alpha values are allowed in most fields.
+//Therefore valid color settings are RRR,GGG,BBB | AAA,RRR,GGG,BBB | #RRGGBB | #AARRGGBB
+//Some background colors can be made transparent, enter =Transparent for the color value
+//If there is a problem loading any field, bright red will be displayed to highlight the problem (255,0,0)
+//I strongly recommend copy/pasting this file and modifying it for your uses
+//Any images you wish to override in the UI must be in a folder with the same name as this file:
+//This is named template.skin, so the folder must be skins/template/
+//All images that can be replaced can be found in the skins/template/ folder
+//You MUST include a copy of all the UI images, if you're not modifying a file, leave the default, but it must be in your skin's folder
+//Background image dimensions in stock skin 750x600 pixels, you can use any size, it will be stretched to fit program window
+//Each Tab Page (Information, Audio, Game Data) has its own background image, same size as above, centered in the tab page
+//See below for the respective tab page background image name
+//To use the same image for all tab pages, name it tabs_all.jpg --- do not include the individual tab images in this case
+
+//Name of the skin, can be anything but too long might screw with the menu's UI
+SkinName=Clean Light
+
+//Overall form background color, hidden by optional background.jpg image (not included in template)
+MainBackgroundColor=220,220,220
+
+//Header background color, hidden by optional header.png image, =Transparent allowed
+HeaderBackgroundColor=220,220,220
+
+//Tab selection button text colors
+TabOnColor=255,255,255
+TabOffColor=200,200,200
+TabHoverColor=220,220,220
+
+//Information Tab background color, hidden by optional information_tab.jpg image (not included in template)
+InfoTabBackgroundColor=235,235,235
+
+//Information Tab button background color, =Transparent allowed
+InfoTabButtonColor=35,35,35
+
+//Audio Tab background color, hidden by optional audio_tab.jpg image (not included in template)
+AudioTabBackgroundColor=235,235,235
+
+//Audio Tab button background color, =Transparent allowed
+AudioTabButtonColor=35,35,35
+
+//Game Data Tab background color, hidden by optional gamedata_tab.jpg image (not included in template)
+GameDataTabBackgroundColor=235,235,235
+
+//Game Data Tab button background color, =Transparent allowed
+GameDataTabButtonColor=35,35,35
+
+//Button background color, =Transparent allowed
+AudioTabButtonsColor=51,153,255
+DataTabButtonsColor=51,153,255
+InfoTabButtonsColor=51,153,255
+
+//Button text color (controls text on all the buttons at once, too many to allow individual values)
+ButtonTextColor=255,255,255
+
+//Button style: allowed styles are "System" (Shiny skin), "Flat" (Colorful skin), "Standard"
+ButtonStyle=Flat
+
+//Label background / text colors (controls all the labels at once, too many to allow individual values)
+LabelBackgroundColor=Transparent
+LabelTextColor=35,35,35
+
+//Difficulty labels background / text colors (optional, otherwise Label Colors apply)
+DifficultyBackgroundColor=Transparent
+DifficultyLabelColor=35,35,35
+
+//Text box background / text colors
+TextBoxBackgroundColor=255,255,255
+TextBoxDisabledColor=245,245,245
+TextBoxTextColor=0,0,0
+
+//Group box background / text colors, =Transparent allowed
+GroupBoxBackgroundColor=Transparent		
+GroupBoxTextColor=35,35,35
+
+//Combo box / drop-down background / text colors
+ComboBoxBackgroundColor=255,255,255
+ComboBoxTextColor=0,0,0
+
+//Combo box style: allowed styles are "System" (Shiny skin), "Flat"  (Colorful skin), "Standard"
+ComboBoxStyle=Flat
+
+//Numeric up/down background / text colors
+NumericBackgroundColor=255,255,255
+NumericTextColor=0,0,0
+
+//To-Do list background /text colors
+ToDoBackgroundColor=255,255,255
+ToDoTextColor=0,0,0
+
+//Footer background color, hidden by optional footer.png image, =Transparent allowed
+FooterBackgroundColor=220,220,220
+
+//Footer button color, =Transparent allowed
+FooterButtonBackgroundColor=51,153,255
+
+//Menu colors
+MenuBackgroundColor=Transparent
+MenuTextColor=35,35,35
+MenuBorder=35,35,35
+MenuHighlight=255,255,255
