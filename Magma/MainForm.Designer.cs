@@ -4661,9 +4661,9 @@ namespace MagmaC3
             this.EncodingQualityUpDown.Items.Add("08");
             this.EncodingQualityUpDown.Items.Add("07");
             this.EncodingQualityUpDown.Items.Add("06");
-            this.EncodingQualityUpDown.Items.Add("05");
+            this.EncodingQualityUpDown.Items.Add("05 (default)");
             this.EncodingQualityUpDown.Items.Add("04");
-            this.EncodingQualityUpDown.Items.Add("03 (default)");
+            this.EncodingQualityUpDown.Items.Add("03");
             this.EncodingQualityUpDown.Items.Add("02");
             this.EncodingQualityUpDown.Items.Add("01 (lowest)");
             this.EncodingQualityUpDown.Location = new System.Drawing.Point(390, 507);
@@ -4671,9 +4671,9 @@ namespace MagmaC3
             this.EncodingQualityUpDown.ReadOnly = true;
             this.EncodingQualityUpDown.Size = new System.Drawing.Size(82, 20);
             this.EncodingQualityUpDown.TabIndex = 67;
-            this.EncodingQualityUpDown.Text = "03 (default)";
+            this.EncodingQualityUpDown.Text = "05 (default)";
             this.EncodingQualityUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ToolTip.SetToolTip(this.EncodingQualityUpDown, "Set the encoding quality for the audio. Default is 3");
+            this.ToolTip.SetToolTip(this.EncodingQualityUpDown, "Set the encoding quality for the audio. Default is 5");
             this.EncodingQualityUpDown.SelectedItemChanged += new System.EventHandler(this.EncodingQualityUpDown_SelectedItemChanged);
             // 
             // LabelEncodingQuality

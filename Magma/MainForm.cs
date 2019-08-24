@@ -1258,8 +1258,8 @@ namespace MagmaC3
                 TextBoxAuthor.Text = DefaultAuthor;
             }
 
-            EncodingQualityUpDown.SelectedItem = wiiConversion.Checked ? "03 (default)" : "03 (default)";
-            EncodingQuality = 3;
+            EncodingQualityUpDown.SelectedItem = wiiConversion.Checked ? "03" : "05 (default)";
+            EncodingQuality = 5;
 
             chkTempo.Checked = !neverCheckForTempoMap.Checked;
             chkDrumsMix.Checked = true;
@@ -1568,17 +1568,6 @@ namespace MagmaC3
             UpdateDifficultyDisplayNEMO(PictureDrumDifficulty1, ProjectFile.RankDrum, true);
 
             doDrumMix();
-
-            if (kick == true || snare == true)
-            {
-                if (EncodingQuality > 3)
-                {
-                    MessageBox.Show("You're currently selecting a mix other than stereo kit.\nEncoding Quality 3 has been automatically selected" +
-                                    "\ndue to issues with playback on the PS3.", mAppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    EncodingQualityUpDown.SelectedItem = "03 (default)";
-                    EncodingQuality = 3;
-                }
-            }
         }
 
         private void ButtonDrumKit_Click(object sender, EventArgs e)
@@ -5082,7 +5071,7 @@ namespace MagmaC3
                 MessageBox.Show("You're currently using Wii Mode\nDue to the Wii's limited memory, you are restricted to using\nEncoding Quality 3 " +
                                 "(RBN default) or lower",mAppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 WiiWarning = true;
-                EncodingQualityUpDown.SelectedItem = "03 (default)";
+                EncodingQualityUpDown.SelectedItem = "03";
                 return;
             }
 
@@ -5095,13 +5084,13 @@ namespace MagmaC3
                 case "02":
                     EncodingQuality = 2;
                     break;
-                case "03 (default)":
+                case "03":
                     EncodingQuality = 3;
                     break;
                 case "04":
                     EncodingQuality = 4;
                     break;
-                case "05":
+                case "05 (default)":
                     EncodingQuality = 5;
                     break;
                 case "06":
@@ -5120,17 +5109,9 @@ namespace MagmaC3
                     EncodingQuality = 10;
                     break;
                 default:
-                    EncodingQuality = 3;
-                    EncodingQualityUpDown.SelectedItem = "03 (default)";
+                    EncodingQuality = 5;
+                    EncodingQualityUpDown.SelectedItem = "05 (default)";
                     break;
-            }
-
-            if (ComboDrums.SelectedIndex > 0 && EncodingQuality > 3)
-            {
-                MessageBox.Show("You've currently selected a mix other than stereo kit.\nEncoding Quality 3 has been automatically selected" +
-                                "\ndue to issues with playback on the PS3.", mAppTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                EncodingQualityUpDown.SelectedItem = "03 (default)";
-                EncodingQuality = 3;
             }
         }
 
