@@ -862,22 +862,30 @@ namespace MagmaC3
                                 var mix = mixevent.ToString().Substring(index, mixevent.ToString().Length - index);
                                 mix = mix.Replace("easy", ""); //old drum mix no longer used
                                 mix = mix.Replace("nokick", ""); //old drum mix no longer used
-                                mix = mix.Replace("noflip", ""); //old drum mix no longer used
                                 //remove the 3] from the end
                                 var newmix = mix.Substring(0, mix.Length - 2);
                                 var disco = "";
+                                var noflip = "";
                                 if (mix.EndsWith("d]", StringComparison.Ordinal))
                                 {
                                     newmix = mix.Substring(0, mix.Length - 3); //disco flip, remove the 3d] from the end
                                     disco = "d";
+                                    noflip = "";
+                                }
+                                else if (mix.EndsWith("noflip]", StringComparison.Ordinal)) //no-flip disco flip
+                                {
+                                    newmix = mix.Substring(0, mix.Length - 9); //remove the 3dnoflip] from the end
+                                    disco = "d";
+                                    noflip = "noflip";
                                 }
                                 else if (mix.EndsWith("a]", StringComparison.Ordinal)) //found in some HMX-authored songs (Fly Like an Eagle)
                                 {
                                     newmix = mix.Substring(0, mix.Length - 3); //remove the 3a] from the end
                                     disco = "";
+                                    noflip = "";
                                 }
                                 //messy but this way don't have to re-do how this gets called
-                                newmix = newmix + drums_mix_Text.Substring(drums_mix_Text.Length - 2, 1) + disco + "]";
+                                newmix = newmix + drums_mix_Text.Substring(drums_mix_Text.Length - 2, 1) + disco + noflip + "]";
                                 newmixes.Add(new TextEvent(newmix, MetaEventType.TextEvent, mixevent.AbsoluteTime));
                                 removemixes.Add(notes);
                             }
